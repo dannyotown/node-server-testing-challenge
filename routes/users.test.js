@@ -22,6 +22,6 @@ describe("userModel Insert", () => {
 describe("userModel Delete User", () => {
   test("Delete User", async () => {
     const result = await userModel.deleteUser(1);
-    expect(result).toHaveLength(3);
+    expect(result).toHaveLength(2);
   });
 });

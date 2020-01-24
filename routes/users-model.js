@@ -11,7 +11,12 @@ async function createUser(body) {
     .first();
 }
 
-function deleteUser() {}
+async function deleteUser(id) {
+  await db("Users")
+    .delete()
+    .where("id", id);
+  return list();
+}
 
 module.exports = {
   list,
