@@ -18,8 +18,17 @@ async function deleteUser(id) {
   return list();
 }
 
+async function updateUser(changes, id) {
+  await db("users")
+    .update(changes)
+    .where("id", id);
+  return db("users")
+    .select("*")
+    .where("id", id);
+}
 module.exports = {
   list,
   createUser,
-  deleteUser
+  deleteUser,
+  updateUser
 };
